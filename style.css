@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --ltPink: hsl(275, 100%, 97%);
+    --grayPurple: hsl(292, 16%, 49%);
+    --dkPurple: hsl(292, 42%, 14%);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--ltPink) url('./assets/images/background-pattern-mobile.svg') 0 0 no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.card-accordian {
+    margin: 0 auto;
+    padding: 25px;
+    width: 90vw;
+    padding-bottom: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10%;
+}
+
+header > img {
+    width: 25px;
+    height: auto;
+    margin: 0 auto;
+    margin-right: 2em;
+    flex-shrink: 1;
+}
+
+h1 {
+    flex-grow: 5;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.card-section-header {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.card-section-header > p {
+    width: 85%;
+    margin-right:5px;
+}
+
+.card-section-body {
+    font-weight: 300;
+    max-height: 0;
+    overflow: hidden;
+    color: var(--dkPurple);
+    will-change: max-height;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.accordion.active .card-section-body{
+    opacity: 1;
+    color: var(--dkPurple);
+}
+
+hr {
+    border: 1px solid var(--ltPink);
+    margin: 5% auto;
+}
+
+footer {
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-open {
+    cursor: pointer;
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center; 
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (min-width: 768px){
+    .card-section-header {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 1368px){
+    header {
+        margin-bottom: 2%;
+    }
+
+    .card-accordian {
+        box-shadow: 0 0 150px rgba(65, 4, 67, 0.318);
+    }
+
+    .card-section-header {
+        font-size: 1.5em;
+    }
+
+    .card-section-body {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    body {
+        background: url("./assets/images/background-pattern-desktop.svg") no-repeat;
+        background-size: contain;
+    }
+
+    header {
+        font-size: 1.5em;
+        margin-bottom: 5%;
+    }
+
+    header > img {
+        width: 50px;
+        height: auto;
+        margin: 0 auto;
+        margin-right: 2em;
+        flex-shrink: 1;
+    }
+
+    .card-accordian {
+        padding: 3%;
+        max-width: 40vw;
+    }
+
+    .card-section-header {
+        font-size: 1.25em;
+    }
+}
